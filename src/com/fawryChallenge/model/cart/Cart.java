@@ -1,10 +1,8 @@
 package com.fawryChallenge.model.cart;
 
 import com.fawryChallenge.model.Customer.Customer;
-import com.fawryChallenge.model.product.Expirable;
-import com.fawryChallenge.model.product.ExpirableProduct;
-import com.fawryChallenge.model.product.Product;
-import com.fawryChallenge.model.product.ShippableProduct;
+import com.fawryChallenge.model.product.*;
+import com.fawryChallenge.service.shipping.ShippingServiceImpl.ShippingServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,9 +31,21 @@ public class Cart {
             System.out.println(product.getName()+"Is out of stock");
             return;
         }
-        if (product instanceof ShippableProduct ){
 
+        items.add(new CartItem(product,quantity));
+
+    }
+    public double getSubTotal(){
+        double subTotal =0;
+        for (CartItem item : items){
+            subTotal += item.getPrice();
         }
+        return subTotal;
+    }
+    public boolean isEmpty(){
+        return items.isEmpty();
+    }
 
+    public Cart() {
     }
 }

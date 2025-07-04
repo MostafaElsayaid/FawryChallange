@@ -27,6 +27,10 @@ public class CartItem {
         this.quantity = quantity;
     }
 
+    public double getPrice (){
+        return product.getPrice() * quantity;
+    }
+
     @Override
     public String toString() {
         return "CartItem{" +
