@@ -84,5 +84,6 @@ public class CheckoutServiceImpl implements CheckoutService {
         System.out.println("Amount           " + (int)total);
         System.out.println("Remaining Balance: " + (double)customer.getBalance());
     }
-    }}
+    }
+}
 
