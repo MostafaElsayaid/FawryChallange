@@ -1,6 +1,8 @@
 package com.fawryChallenge.model.product;
 
-public class ShippableProduct extends Product implements Shippable{
+import java.time.LocalDate;
+
+public class ShippableProduct extends Product implements Shippable ,Expirable{
    private double weight;
 
     public ShippableProduct(String name, double price, int quantity, double weight) {
@@ -11,5 +13,15 @@ public class ShippableProduct extends Product implements Shippable{
     @Override
     public double gtWeight() {
         return weight;
+    }
+
+    @Override
+    public boolean isExpired() {
+        return false;
+    }
+
+    @Override
+    public LocalDate getExpireDate() {
+        return null;
     }
 }

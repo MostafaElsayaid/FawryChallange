@@ -12,8 +12,7 @@ public class ExpirableShippableProduct extends ExpirableProduct implements Expir
         this.weight = weight;
     }
 
-    @Override
-    public double gtWeight() {
+    @Override    public double gtWeight() {
         return weight;
     }
 }
