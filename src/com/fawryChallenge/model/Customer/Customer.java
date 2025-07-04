@@ -26,6 +26,7 @@ public class Customer {
     }
 
     public void reduceBalance(double amount){
+
         this.Balance-=amount;
     }
 

@@ -23,8 +23,4 @@ public class ExpirableProduct extends Product implements Expirable{
 
     }
 
-    @Override
-    public LocalDate getExpireDate() {
-        return expireDate;
-    }
 }

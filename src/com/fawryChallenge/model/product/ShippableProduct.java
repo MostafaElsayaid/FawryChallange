@@ -2,7 +2,7 @@ package com.fawryChallenge.model.product;
 
 import java.time.LocalDate;
 
-public class ShippableProduct extends Product implements Shippable ,Expirable{
+public class ShippableProduct extends Product implements Shippable {
    private double weight;
 
     public ShippableProduct(String name, double price, int quantity, double weight) {
@@ -14,14 +14,9 @@ public class ShippableProduct extends Product implements Shippable ,Expirable{
     public double gtWeight() {
         return weight;
     }
-
     @Override
-    public boolean isExpired() {
-        return false;
+    public String getName(){
+        return name;
     }
 
-    @Override
-    public LocalDate getExpireDate() {
-        return null;
-    }
 }

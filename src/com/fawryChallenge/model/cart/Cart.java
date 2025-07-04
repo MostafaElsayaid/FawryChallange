@@ -22,7 +22,7 @@ public class Cart {
         this.items = items;
     }
 
-    public void addItem(Product product, int quantity){
+    public void add(Product product, int quantity){
         if (product instanceof ExpirableProduct && ((ExpirableProduct) product).isExpired()){
             System.out.println(product.getName()+" is Expired");
             return;
@@ -45,7 +45,18 @@ public class Cart {
     public boolean isEmpty(){
         return items.isEmpty();
     }
-
+    public List<Shippable> shippableItems() {
+        List<Shippable> shippables = new ArrayList<>();
+        for (CartItem item : items) {
+            Product p = item.getProduct();
+            if (p instanceof Shippable) {
+                for (int i = 0; i < item.getQuantity(); i++) {
+                    shippables.add((Shippable) p);
+                }
+            }
+        }
+        return shippables;
+    }
     public Cart() {
     }
 }
