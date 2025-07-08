@@ -57,7 +57,6 @@ public class CheckoutServiceImpl implements CheckoutService {
 
             Map<String, Integer> nameCount = new LinkedHashMap<>();
             Map<String, Double> nameWeight = new HashMap<>();
-            System.out.println(nameWeight);
             for (Shippable item : shippingService.getItems()) {
                 String name = item.getName();
                 nameCount.put(name, nameCount.getOrDefault(name, 0) + 1);
